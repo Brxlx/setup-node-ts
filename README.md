@@ -81,4 +81,20 @@ const a:number = 2; // :D
 
      `"resolveJsonModule": true,`
 
+> Paths
+
+- Configurar _paths_ manuais:
+    ```json
+    "baseUrl": ".",
+    "paths": {
+      "@controllers/*": ["./src/controllers/*"],
+      "@models/*": ["./src/models/*"],
+      "@config/*": ["./src/config/*"]
+    }
+    ```
+- Instalar dependência para leitura dos _paths_:
+    
+    `yarn add tsconfig-paths -D`
+
+
 
