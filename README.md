@@ -179,3 +179,52 @@ const a:number = 2; // :D
             ```
             testMatch: ['**/__tests__/**/*.ts?(x)', '**/?(*.)+(spec|test).ts?(x)']
             ```
+
+> Babel
+
+- Adicionar pacotes do Babel e suas dependências:
+
+    `yarn add -D @babel/cli @babel/core @babel/node @babel/preset-env @babel/preset-typescript babel-plugin-module-resolver`
+
+- Criar arquivo de configuração do babel `babel.config.js`
+
+    ```javascript
+
+    module.exports = {
+    presets: [
+        [
+        '@babel/preset-env',
+        {
+            targets: {
+            node: 'current',
+            },
+        },
+        ],
+        '@babel/preset-typescript',
+    ],
+    plugins: [
+        ['module-resolver', {
+        alias: {
+            '@controllers': './src/controllers',
+            '@models': './src/models',
+            '@config': './src/config',
+        },
+        }],
+    ],
+    ignore: [
+        '**/*.spec.ts', // Ignora arquivos de testes no bundle
+    ],
+    };
+
+   ```
+
+- Por fim, criar script de build no `package.json`:
+
+    `"build": "babel src --extensions \".js,.ts\" --out-dir dist --copy-files --no-copy-ignored"`
+
+> Script de produção
+
+- Executar código de produção:
+
+    `"prod":"node dist/server.js"`
+
