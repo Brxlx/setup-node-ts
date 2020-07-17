@@ -152,7 +152,7 @@ const a:number = 2; // :D
 
 - Executar teste:
 
-        `yarn test`
+    `yarn test`
 
 - Adicionar custom _paths_:
 
