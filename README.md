@@ -159,7 +159,7 @@ const a:number = 2; // :D
     - Adicionar, no arquivo `jest.config.ts`:
 
         ```
-        const { pathsToModuleNameMapper } = require('ts-jest');
+        const { pathsToModuleNameMapper } = require('ts-jest/utils');
 
         const { compilerOptions } = require('./tsconfig.json');
         ```
@@ -173,3 +173,9 @@ const a:number = 2; // :D
         ```
 
     - Para o compilador do jest funcionar, criar um novo arquivo, `tsconfig.jest.json`, p.e., copiando os valores do tsconfig.json padrão, __sem NENHUM comentário!__
+
+        - Para ignorar arquivos `.js`, colocar dentro do `jest.config.json`:
+
+            ```
+            testMatch: ['**/__tests__/**/*.ts?(x)', '**/?(*.)+(spec|test).ts?(x)']
+            ```
