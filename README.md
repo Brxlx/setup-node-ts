@@ -96,5 +96,34 @@ const a:number = 2; // :D
     
     `yarn add tsconfig-paths -D`
 
+> ESLint
+
+- Instalar eslint como dependência de desenvolvimento
+
+    `yarn add eslint -D`
+
+- Inicializar eslint e configurações
+
+    `yarn eslint --init`
+
+- Se utilizar yarn, adicionar dependências manualmente como dependências de desenvolvimento
+
+    `yarn add [...] -D`
+
+- Para _styleGuide_ do __Airbnb__, adicionar:
+
+    `yarn add eslint-import-resolver-typescript -D`
+
+- E no `.eslintrc.json`:
+
+    ```
+    "settings": {
+          "import/resolver": {
+            "typescript": {} // this loads <rootdir>/tsconfig.json to eslint
+          }
+        }
+    ```
+
+
 
 
