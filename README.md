@@ -228,3 +228,35 @@ const a:number = 2; // :D
 
     `"prod":"node dist/server.js"`
 
+
+> Import Helpers
+
+- Para pernonalizar a ordem e organização de importação das dependências e módulos:
+
+    `yarn add -D eslint-plugin-import-helpers`
+
+- No arquivo `.eslintrc.json`:
+
+    ```json
+    "plugins": [
+        "@typescript-eslint",
+        "eslint-plugin-import-helpers"
+    ],
+    "rules": {
+        "import-helpers/order-imports": [
+            "warn",
+            {
+              "newlinesBetween": "always", // new line between groups
+              "groups": [
+                  "module",
+                  "/^@server\/shared/",
+                  "/^@/",
+                  ["parent", "sibling", "index"]
+              ],
+              "alphabetize": { "order": "asc", "ignoreCase": true }
+            }
+          ]
+    }
+
+    ```
+---
