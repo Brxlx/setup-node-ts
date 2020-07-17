@@ -124,6 +124,52 @@ const a:number = 2; // :D
         }
     ```
 
+> JEST
 
+- Adicionar jest:
 
+    `yarn add jest -D`
 
+- Inicializar arquivo de configuração:
+
+    `yarn jest --init`
+
+- Adicionar pacote para funcionalidade com typescript:
+
+    `yarn add ts-jest -D`
+
+- Adicionar tipagem do jest:
+
+    `yarn add @types/jest -D`
+
+    - No arquivo `jest.config.js`, adicionar:
+
+        `preset: 'ts-jest'`
+
+    - No arquivo `.eslintrc.json`:
+
+        - `"jest":true` em `env`
+
+- Executar teste:
+
+        `yarn test`
+
+- Adicionar custom _paths_:
+
+    - Adicionar, no arquivo `jest.config.ts`:
+
+        ```
+        const { pathsToModuleNameMapper } = require('ts-jest');
+
+        const { compilerOptions } = require('./tsconfig.json');
+        ```
+
+    - Adicionar, no arquivo `tsconfig.json`:
+
+        ```
+        "include": [
+        "src/**/*"
+         ]
+        ```
+
+    - Para o compilador do jest funcionar, criar um novo arquivo, `tsconfig.jest.json`, p.e., copiando os valores do tsconfig.json padrão, __sem NENHUM comentário!__
