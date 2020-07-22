@@ -259,4 +259,35 @@ const a:number = 2; // :D
     }
 
     ```
+
+> Debug
+
+- Criar arquivo `launch.json` dentro da pasta `.vscode` na raiz do projeto:
+
+    ```json
+    {
+    "configurations": [
+        {
+            "type": "node",
+            "request": "attach",
+            "name": "Launch Program",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "protocol": "inspector",
+            "restart": true
+        }
+        ]
+    }
+   ```
+
+- Como o tsc em dev devidamente configurado, passar a flag _--inspect_ para poder atrelar ao _debugger_ no `package.json`:
+
+    ```json
+    "dev": "ts-node-dev -r tsconfig-paths/register --inspect --respawn --transpile-only --ignore-watch --no-notify src/server.ts"
+    ```
+
+- **Extra**: Se houver _warning_ de _DeprecationWarning (...) browser_, atualizar pacote `broweser-sync`:
+
+    `yarn upgrade browser-sync@2.26.7` ou superior.
 ---

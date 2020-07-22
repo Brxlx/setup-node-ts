@@ -1,0 +1,14 @@
+{
+    "configurations": [
+    {
+        "type": "node",
+        "request": "attach",
+        "name": "Launch Program",
+        "skipFiles": [
+            "<node_internals>/**"
+        ],
+        "protocol": "inspector",
+        "restart": true
+    }
+]
+}
