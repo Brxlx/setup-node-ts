@@ -180,6 +180,8 @@ const a:number = 2; // :D
             testMatch: ['**/__tests__/**/*.ts?(x)', '**/?(*.)+(spec|test).ts?(x)']
             ```
 
+    ### _Interessante utilizar uma base de dados somente para os testes!!! (e.g SqLite)_
+
 > Babel
 
 - Adicionar pacotes do Babel e suas dependências:
