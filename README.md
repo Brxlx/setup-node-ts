@@ -315,4 +315,9 @@ const a:number = 2; // :D
 - **Extra**: Se houver _warning_ de _DeprecationWarning (...) browser_, atualizar pacote `broweser-sync`:
 
     `yarn upgrade browser-sync@2.26.7` ou superior.
+
+
+> Editor Config
+
+- Criar arquivo `.editorconfig` para padronização de algumas configurações de uso geral do projeto.
 ---
