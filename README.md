@@ -6,7 +6,7 @@
 
 > Instalar TypeScript como dependência de desenvolvimento
 
-`yarn add typescript`~~@version~~` -D` 
+`yarn add typescript`~~@version~~` -D`
 
 ```typescript
 const a:number = 2; // :D
@@ -26,7 +26,7 @@ const a:number = 2; // :D
 > Adicionar *library* de compilação TS -> JS
 
 ```bash
- yarn add ts-node-dev -D // Aceita decorators, auto-restart, etc. 
+ yarn add ts-node-dev -D // Aceita decorators, auto-restart, etc.
  ```
 
  > Criar script de execução do compilador
@@ -64,8 +64,8 @@ const a:number = 2; // :D
     - `// "strict": true`
 
 - Se for usar _decorators_:
-     ```typescript   
-     "experimentalDecorators": true,    
+     ```typescript
+     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
      ```
 
@@ -93,7 +93,7 @@ const a:number = 2; // :D
     }
     ```
 - Instalar dependência para leitura dos _paths_:
-    
+
     `yarn add tsconfig-paths -D`
 
 > ESLint
@@ -123,6 +123,29 @@ const a:number = 2; // :D
           }
         }
     ```
+
+> Prettier
+
+- Adicionar bibliotecas:
+
+  `yarn add -D prettier eslint-plugin-prettier eslint-config-prettier`
+
+- Adicionar arquivo `prettier.config.js` .
+
+- Adicionar no arquivo `.eslintrc.json`:
+
+  ```
+  "extends": [
+        ...
+        "prettier/@typescript-eslint",
+        "plugin:prettier/recommended"
+    ],
+
+    "plugins": [
+      ...
+      "prettier",
+  ],
+  ```
 
 > JEST
 
