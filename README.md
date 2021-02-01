@@ -209,7 +209,7 @@ const a:number = 2; // :D
 
 - Adicionar pacotes do Babel e suas dependências:
 
-    `yarn add -D @babel/cli @babel/core @babel/node @babel/preset-env @babel/preset-typescript babel-plugin-module-resolver`
+    `yarn add -D @babel/cli @babel/core @babel/node @babel/preset-env @babel/preset-typescript babel-plugin-module-resolver @babel/plugin-proposal-decorators @babel/plugin-proposal-class-properties babel-plugin-transform-typescript-metadata`
 
 - Criar arquivo de configuração do babel `babel.config.js`
 
@@ -235,6 +235,9 @@ const a:number = 2; // :D
             '@config': './src/config',
         },
         }],
+        ['@babel/plugin-proposal-decorators', { legacy: true }],
+        ["@babel/plugin-proposal-class-properties", { loose: true }],
+        'babel-plugin-transform-typescript-metadata',
     ],
     ignore: [
         '**/*.spec.ts', // Ignora arquivos de testes no bundle
