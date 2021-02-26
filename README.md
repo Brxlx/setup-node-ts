@@ -146,6 +146,16 @@ const a:number = 2; // :D
       "prettier",
   ],
   ```
+  
+  ***Edit
+  - Se a versão do pacote eslint-config-prettier > 8.0.0 :
+  ```
+  "extends": [
+      [...],
+      "prettier", // <-
+      "plugin:prettier/recommended" <-
+  ],
+  ```
 
 > JEST
 
