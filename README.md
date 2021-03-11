@@ -195,6 +195,9 @@ const a:number = 2; // :D
         const { pathsToModuleNameMapper } = require('ts-jest/utils');
 
         const { compilerOptions } = require('./tsconfig.json');
+        
+        // Em moduleNameMapper
+         moduleNameMapper: pathsToModuleNameMapper(compilerOptions.paths, { prefix: '<rootDir>' }),
         ```
 
     - Adicionar, no arquivo `tsconfig.json`:
